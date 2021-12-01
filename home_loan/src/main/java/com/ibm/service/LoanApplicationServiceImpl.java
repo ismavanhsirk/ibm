@@ -2,11 +2,17 @@ package com.ibm.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.ibm.entity.LoanApplication;
 import com.ibm.repo.LoanApplicationRepository;
-
+@Service
 public class LoanApplicationServiceImpl implements LoanApplicationService {
 
+	@Autowired
 	private LoanApplicationRepository repo;
 	
 	@Override
@@ -15,6 +21,7 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
 		repo.save(la);
 	}
 
+	@Transactional
 	@Override
 	public LoanApplication fetch(int loanId) {
 		// TODO Auto-generated method stub

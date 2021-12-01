@@ -1,3 +1,14 @@
+/**
+ * 
+ * This class is an entity class for Customer having one-one relation with user entity
+ * variables:custId,fullName,mobile,email.
+ * foreign key:userId
+ * @author samyuktha
+ * @version 1.1.3
+ * 
+ * **/
+
+
 package com.ibm.entity;
 
 import javax.persistence.CascadeType;
@@ -6,21 +17,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "customer")
 public class Customer {
+	
+		
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int custId;
 
-	@OneToOne(targetEntity = User.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "userId")
-	private User user;
 
 	@Column(name = "full_name", length = 25)
 	private String fullName;
@@ -30,6 +40,15 @@ public class Customer {
 
 	@Column(name = "email", length = 20)
 	private String email;
+	
+	@Column(name="password",length=20)
+	private String password;
+	
+	
+	@Transient
+	private String cPassword;
+	
+
 
 	public int getCustId() {
 		return custId;
@@ -37,14 +56,6 @@ public class Customer {
 
 	public void setCustId(int custId) {
 		this.custId = custId;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	public String getFullName() {
@@ -71,4 +82,21 @@ public class Customer {
 		this.email = email;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getcPassword() {
+		return cPassword;
+	}
+
+	public void setcPassword(String cPassword) {
+		this.cPassword = cPassword;
+	}
+
+	
 }

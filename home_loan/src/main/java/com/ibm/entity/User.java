@@ -1,3 +1,12 @@
+/**
+ * 
+ * This class is an entity class for users
+ * variables: useId,password,role.
+ * @author samyuktha
+ * @version 1.1.2
+ * 
+ * **/
+
 package com.ibm.entity;
 
 import javax.persistence.Column;

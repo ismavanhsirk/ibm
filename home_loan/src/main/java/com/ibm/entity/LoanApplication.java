@@ -1,3 +1,14 @@
+/**
+ * 
+ * This class is an entity class for loanApplication having one-one relation with ApprovedLoans entity
+ * variables:loanId,dateOfBirth,income,occupation,organisationName,pan,resiAddress,propertyValue,
+ * 			propertyConfig,aadhar,loanStatus.
+ * foreign key:custId
+ * @author samyuktha
+ * @version 1.1.2
+ * 
+ * **/
+
 package com.ibm.entity;
 
 import java.sql.Date;
@@ -17,6 +28,30 @@ import javax.persistence.Table;
 @Table(name = "loan_application")
 public class LoanApplication {
 
+	public LoanApplication(int loanId, Customer cust, Date dateOfBirth, String occupation, long income,
+			String organisationName, String pan, String resiAddress, String propertyValue, String propertyConfig,
+			String aadhar, String loanStatus) {
+		super();
+		this.loanId = loanId;
+		this.cust = cust;
+		this.dateOfBirth = dateOfBirth;
+		this.occupation = occupation;
+		this.income = income;
+		this.organisationName = organisationName;
+		this.pan = pan;
+		this.resiAddress = resiAddress;
+		this.propertyValue = propertyValue;
+		this.propertyConfig = propertyConfig;
+		this.aadhar = aadhar;
+		this.loanStatus = loanStatus;
+	}
+	
+
+	public LoanApplication() {
+		super();
+	}
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int loanId;
@@ -25,8 +60,8 @@ public class LoanApplication {
 	@JoinColumn(name = "custId")
 	private Customer cust;
 
-	@Column(name = "date_of_birth")
-	private Date date_of_birth;
+	@Column(name = "dateOfBirth")
+	private Date dateOfBirth;
 
 	@Column(name = "occupation", length = 15)
 	private String occupation;
@@ -34,26 +69,26 @@ public class LoanApplication {
 	@Column(name = "income", length = 10)
 	private long income;
 
-	@Column(name = "organisation_name", length = 15)
-	private String organisation_name;
+	@Column(name = "organisationName", length = 15)
+	private String organisationName;
 
 	@Column(name = "pan", length = 10)
 	private String pan;
 
-	@Column(name = "resi_address", length = 30)
-	private String resi_address;
+	@Column(name = "resiAddress", length = 30)
+	private String resiAddress;
 
-	@Column(name = "property_value", length = 10)
-	private String property_value;
+	@Column(name = "propertyValue", length = 10)
+	private String propertyValue;
 
-	@Column(name = "property_config", length = 30)
-	private String property_config;
+	@Column(name = "propertyConfig", length = 30)
+	private String propertyConfig;
 
 	@Column(name = "aadhar", length = 12)
 	private String aadhar;
 
-	@Column(name = "loan_status")
-	private String loan_status;
+	@Column(name = "loanStatus")
+	private String loanStatus;
 
 	public int getLoanId() {
 		return loanId;
@@ -71,12 +106,12 @@ public class LoanApplication {
 		this.cust = cust;
 	}
 
-	public Date getDate_of_birth() {
-		return date_of_birth;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setDate_of_birth(Date date_of_birth) {
-		this.date_of_birth = date_of_birth;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	public String getOccupation() {
@@ -95,12 +130,12 @@ public class LoanApplication {
 		this.income = income;
 	}
 
-	public String getOrganisation_name() {
-		return organisation_name;
+	public String getOrganisationName() {
+		return organisationName;
 	}
 
-	public void setOrganisation_name(String organisation_name) {
-		this.organisation_name = organisation_name;
+	public void setOrganisationName(String organisationName) {
+		this.organisationName = organisationName;
 	}
 
 	public String getPan() {
@@ -111,28 +146,28 @@ public class LoanApplication {
 		this.pan = pan;
 	}
 
-	public String getResi_address() {
-		return resi_address;
+	public String getResiAddress() {
+		return resiAddress;
 	}
 
-	public void setResi_address(String resi_address) {
-		this.resi_address = resi_address;
+	public void setResiAddress(String resiAddress) {
+		this.resiAddress = resiAddress;
 	}
 
-	public String getProperty_value() {
-		return property_value;
+	public String getPropertyValue() {
+		return propertyValue;
 	}
 
-	public void setProperty_value(String property_value) {
-		this.property_value = property_value;
+	public void setPropertyValue(String propertyValue) {
+		this.propertyValue = propertyValue;
 	}
 
-	public String getProperty_config() {
-		return property_config;
+	public String getPropertyConfig() {
+		return propertyConfig;
 	}
 
-	public void setProperty_config(String property_config) {
-		this.property_config = property_config;
+	public void setPropertyConfig(String propertyConfig) {
+		this.propertyConfig = propertyConfig;
 	}
 
 	public String getAadhar() {
@@ -143,12 +178,14 @@ public class LoanApplication {
 		this.aadhar = aadhar;
 	}
 
-	public String getLoan_status() {
-		return loan_status;
+	public String getLoanStatus() {
+		return loanStatus;
 	}
 
-	public void setLoan_status(String loan_status) {
-		this.loan_status = loan_status;
+	public void setLoanStatus(String loanStatus) {
+		this.loanStatus = loanStatus;
 	}
+
+	
 
 }

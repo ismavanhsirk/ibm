@@ -1,3 +1,9 @@
+/**
+ * 
+ * This interface is CustomerService , contains method declarations only
+ * 
+ * **/
+
 package com.ibm.service;
 
 import java.util.List;

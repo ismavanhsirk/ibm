@@ -1,3 +1,9 @@
+/**
+ * 
+ * This class implements UseService and its methods are defined here
+ * 
+ *  **/
+
 package com.ibm.service;
 
 import java.util.List;

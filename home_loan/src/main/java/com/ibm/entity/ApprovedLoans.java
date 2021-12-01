@@ -1,4 +1,12 @@
-package com.ibm.entity;
+/**
+ * 
+ * This class is an entity class for ApprovedLoans having one-one relation with LoanApplication entity
+ * variables:startDate,endDate,approvedAmount,tenure,intrestRate,emiAmount.
+ * foreign key:loanId
+ * @author samyuktha
+ * @version 1.1.5
+ * 
+ * **/package com.ibm.entity;
 
 import java.sql.Date;
 
@@ -24,23 +32,23 @@ public class ApprovedLoans {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int approvalId;
 
-	@Column(name = "start_date")
-	private Date start_date;
+	@Column(name = "startDate")
+	private Date startDate;
 
-	@Column(name = "end_date")
-	private Date end_date;
+	@Column(name = "endDate")
+	private Date endDate;
 
-	@Column(name = "approved_amount")
-	private long approved_amount;
+	@Column(name = "approvedAmount")
+	private long approvedAmount;
 
-	@Column(name = "intrest_rate")
-	private long intrest_rate;
+	@Column(name = "intrestRate")
+	private long intrestRate;
 
 	@Column(name = "tenure")
 	private String tenure;
 
-	@Column(name = "emi_amount")
-	private long emi_amount;
+	@Column(name = "emiAmount")
+	private long emiAmount;
 
 	public LoanApplication getLa() {
 		return la;
@@ -58,36 +66,36 @@ public class ApprovedLoans {
 		this.approvalId = approvalId;
 	}
 
-	public Date getStart_date() {
-		return start_date;
+	public Date getStartDate() {
+		return startDate;
 	}
 
-	public void setStart_date(Date start_date) {
-		this.start_date = start_date;
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
 
-	public Date getEnd_date() {
-		return end_date;
+	public Date getEndDate() {
+		return endDate;
 	}
 
-	public void setEnd_date(Date end_date) {
-		this.end_date = end_date;
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
-	public long getApproved_amount() {
-		return approved_amount;
+	public long getApprovedAmount() {
+		return approvedAmount;
 	}
 
-	public void setApproved_amount(long approved_amount) {
-		this.approved_amount = approved_amount;
+	public void setApprovedAmount(long approvedAmount) {
+		this.approvedAmount = approvedAmount;
 	}
 
-	public long getIntrest_rate() {
-		return intrest_rate;
+	public long getIntrestRate() {
+		return intrestRate;
 	}
 
-	public void setIntrest_rate(long intrest_rate) {
-		this.intrest_rate = intrest_rate;
+	public void setIntrestRate(long intrestRate) {
+		this.intrestRate = intrestRate;
 	}
 
 	public String getTenure() {
@@ -98,12 +106,12 @@ public class ApprovedLoans {
 		this.tenure = tenure;
 	}
 
-	public long getEmi_amount() {
-		return emi_amount;
+	public long getEmiAmount() {
+		return emiAmount;
 	}
 
-	public void setEmi_amount(long emi_amount) {
-		this.emi_amount = emi_amount;
+	public void setEmiAmount(long emiAmount) {
+		this.emiAmount = emiAmount;
 	}
 
-}
+	}

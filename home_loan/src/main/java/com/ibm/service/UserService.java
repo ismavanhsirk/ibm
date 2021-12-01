@@ -1,3 +1,8 @@
+/**
+ * 
+ * This interface is UserService , contains method declarations only
+ * 
+ * **/
 package com.ibm.service;
 
 import java.util.List;
